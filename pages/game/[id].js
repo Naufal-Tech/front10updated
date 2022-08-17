@@ -77,7 +77,7 @@ function detail() {
                   >
                     {' '}
                     Playing games is not a crime, let's play! <br></br>
-                    <p style={{ fontSize: '70px' }}>{game.name}</p>{' '}
+                    <p style={{ fontSize: '70px' }}>{game.name}</p>{''}
                   </h1>
 
                   <a

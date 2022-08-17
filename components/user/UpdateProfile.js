@@ -48,17 +48,18 @@ const UpdateProfile = () => {
     loading: updateLoading,
   } = useSelector((state) => state.update);
 
-  useEffect(async () => {
+  useEffect(() => {
+    
     if (loadedUser) {
       setUpdateData({
-        first_name: loadedUser.first_name,
-        last_name: loadedUser.last_name,
-        email: loadedUser.email,
-        username: loadedUser.username,
-        password: loadedUser.password,
-        bio: loadedUser.bio,
-        location: loadedUser.loacation,
-        social_media_url: loadedUser.social_media_url,
+        first_name: loadedUser.first_name ?? "-",
+        last_name: loadedUser.last_name ?? "-",
+        email: loadedUser.email ?? "-",
+        username: loadedUser.username ?? "-",
+        password: loadedUser.password ?? "-",
+        bio: loadedUser.bio ?? "-",
+        location: loadedUser.loacation ?? "-",
+        social_media_url: loadedUser.social_media_url ?? "-",
       });
     }
 
@@ -158,7 +159,7 @@ const UpdateProfile = () => {
                     </div>
 
                     <div className="form-group">
-                      <label htmlFor="name_field">Biodata</label>
+                      <label htmlFor="name_field">Bio</label>
                       <input
                         type="text"
                         id="name_field"

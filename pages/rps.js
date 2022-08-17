@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Script from 'next/script';
 import styles from '../styles/RPS.module.css';
 
+
 export default function RPS() {
   return (
     <div>
@@ -13,7 +14,7 @@ export default function RPS() {
           ></link>
           <div className="row align-items-center">
             <div className="col-1 fs-1 fw-bolder text-end custom-back-button">
-              <a style={{ color: '#724C21' }} href="/listgames">
+              <a style={{ color: '#724C21' }} href="/game">
                 &lt;
               </a>
             </div>

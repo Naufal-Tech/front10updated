@@ -27,7 +27,7 @@ const ResetPassword = ({ props }) => {
     const value = e.target.value;
     setConfirmPassword(value);
     if (!value) {
-      setErrorConfirmPassword('Confirm Password cannot be empty');
+      setErrorConfirmPassword('Confirm password cannot be empty');
     } else {
       setErrorConfirmPassword('');
     }
@@ -35,7 +35,7 @@ const ResetPassword = ({ props }) => {
     if (newPassword !== value) {
       setErrorDoesntMatch("Password doesn't match");
     } else if (newPassword === value) {
-      toast.success('The password is matched ');
+      toast.success('The password is matched');
       setErrorDoesntMatch('');
     }
   };

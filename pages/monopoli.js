@@ -45,28 +45,7 @@ const clickHandel = (props) => {
 
 function monopoli(props) {
   const router = useRouter();
-  // useEffect(() => {
-  //     if (!router.isReady) return;
-  //     const id = router.query.id;
-  //     console.log(id)
-
-  //     const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  //     console.log(apiUrl);
-
-  //     fetch(`${apiUrl}/game/${id}`)
-  //         .then(response => response.json())
-  //         .then(result => {
-  //             setGame(result.data)
-  //             console.log(game)
-  //             fetch(`${apiUrl}/game/${id}/leaderboard`)
-  //                 .then(response => response.json())
-  //                 .then(result => {
-  //                     setLeaderboard(result.data)
-  //                     console.log(leaderboard)
-  //                 });
-  //         });
-
-  // }, [router.isReady])
+  
   return (
     <Fragment>
       <div id={style['content-container']}>

@@ -11,23 +11,25 @@ const Home = () => {
 
   const { first_name, last_name } = user;
 
-  useEffect(async () => {
+  useEffect(() => {
     try {
-      const config = {
-        headers: {
-          authorization: `${localStorage.getItem('accessToken')}`,
-        },
-      };
-      const result = await axios.get('http://localhost:4000/api/me', config);
-      setUser({
-        first_name: result.data.user.first_name,
-        last_name: result.data.user.last_name,
-      });
+      (async () => {
+        const config = {
+          headers: {
+            "authorization": `${localStorage.getItem('accessToken')}`,
+          },
+        };
+        const result = await axios.get('http://localhost:4000/api/me', config);
+        setUser({
+          first_name: result.data.user.first_name,
+          last_name: result.data.user.last_name,
+        });
+      })();
     } catch (error) {
       console.log(error.response);
     }
   }, []);
-
+  
   return (
     <div className="home-bg-image">
       <div className="home-background">
@@ -59,7 +61,7 @@ const Home = () => {
           <a href="/game/2">
             <img
               className="img-margin"
-              src="https://www.jd.id/news/wp-content/uploads/2022/04/Begini-Ternyata-Cara-Main-Monopoli-yang-Benar-Agar-Seru-JD.ID_.jpg"
+              src="https://cdn1-production-images-kly.akamaized.net/4CSD19GZFRUjQx29jJzWmwrhmcQ=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1035682/original/050130000_1446021579-monopoly-movie.jpg"
             />
           </a>
           <a href="/game/3">

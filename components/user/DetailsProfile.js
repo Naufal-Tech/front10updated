@@ -24,23 +24,25 @@ const DetailsProfile = () => {
     social_media_url,
   } = user;
 
-  useEffect(async () => {
+  useEffect(() => {
     try {
-      const config = {
-        headers: {
-          authorization: `${localStorage.getItem('accessToken')}`,
-        },
-      };
-      const result = await axios.get('http://localhost:4000/api/me', config);
-      setUser({
-        first_name: result.data.user.first_name,
-        last_name: result.data.user.last_name,
-        email: result.data.user.email,
-        username: result.data.user.username,
-        bio: result.data.user.bio,
-        location: result.data.user.location,
-        social_media_url: result.data.user.social_media_url,
-      });
+      (async () => {
+        const config = {
+          headers: {
+            "authorization": `${localStorage.getItem('accessToken')}`,
+          },
+        };
+        const result = await axios.get('http://localhost:4000/api/me', config);
+        setUser({
+          first_name: result.data.user.first_name ?? "-",
+          last_name: result.data.user.last_name ?? "-",
+          email: result.data.user.email ?? "-",
+          username: result.data.user.username ?? "-",
+          bio: result.data.user.bio ?? "-",
+          location: result.data.user.location ?? "-",
+          social_media_url: result.data.user.social_media_url ?? "-",
+        });
+      })();
     } catch (error) {
       console.log(error.response);
     }

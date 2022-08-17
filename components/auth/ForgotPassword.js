@@ -16,7 +16,7 @@ const ForgotPassword = () => {
         email,
       });
       setEmail('');
-      toast.success('Please check your email!');
+      toast.success('Please Check Your Email!');
     }
   };
 
@@ -36,7 +36,7 @@ const ForgotPassword = () => {
                   id="email_field"
                   className="form-control"
                   value={email}
-                  placeholder="Enter an email..."
+                  placeholder="Enter Your Email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
